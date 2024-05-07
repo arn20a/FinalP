@@ -1,3 +1,16 @@
+
+/*************************************************************************
+ *  Aimen Nesru
+ *  SE2
+ *  Brent Reeves
+ *  DeschubsTest.java
+ * 
+ *  
+ *  Tests the uncompressing of tars, Huffman, and LZW files
+ *  
+ *  
+ *  To run with maven run : mvn test
+ *************************************************************************/
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.IOException;
