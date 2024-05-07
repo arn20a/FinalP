@@ -5,12 +5,17 @@
  *  Brent Reeves
  *  SchubsH.java
  * 
+ *  Compresses files using Huffman compression algorithm
+ * 
  *  Compilation: javac SchubsH.java
  *  Execution: java SchubsH test-file
  *  
- *  Compresses files using Huffman compression algorithm
+ *  This will compress the given file <test-file> and produce <testfile>.hh 
+ *  Example: test1.txt becomes test1.txt.hh
  *  
- *  
+ *  For Globs: java SchubsH <Glob>
+ *  Example: java SchubsH <Glob> *.txt will change all txt files to *.txt.hh
+ * 
  *  To run with maven run : java -cp target/classes SchubsH test-file
  * 
  *  Algorithm Theory: Huffman compression is a prefix coding technique

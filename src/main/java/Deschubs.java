@@ -5,11 +5,13 @@
  *  Brent Reeves
  *  Deschubs.java
  * 
+ *  Uncompresses a file that has been compressed using LZW, Tars, or 
+ *  Huffman compression 
+ * 
  *  Compilation:  javac Deschubs.java
  *  Execution:    java Deschubs compressed-filename
- *  
- *  Uncompresses a file that has been compressed using LZW or 
- *  Huffman compression
+ 
+ *  Example: java deschubs blee.txt.hh becomes blee.txt
  *  
  *  To run with maven run : java -cp target/classes Deschubs compressed-filename
  * 

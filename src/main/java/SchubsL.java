@@ -5,11 +5,16 @@
  *  Brent Reeves
  *  SchubsL.java
  * 
+ *  Compresses files using LZW compression algorithm
+ * 
  *  Compilation: javac SchubsL.java
  *  Execution: java SchubsL uncompressed-file 
  *  
- *  
- *  Compresses files using LZW compression algorithm
+ *  This will compress the given file <test-file> and produce <testfile>.ll 
+ *  Example: test1.txt becomes test1.txt.ll
+ * 
+ *  For Globs: java SchubsL <Glob>
+ *  Example: java SchubsL <Glob> *.txt will change all txt files to *.txt.ll
  *  
  *  To run with maven run : java -cp target/classes SchubsL uncompressed-file
  * 
