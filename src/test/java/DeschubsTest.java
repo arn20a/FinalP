@@ -52,12 +52,10 @@ public class DeschubsTest {
         public void decompressLZW() throws IOException {
 
                 try {
-                        String testFileName = "src" + File.separator + "DeschubsTest" +
-                                        File.separator + "testFile.txt";
+                        String testFileName = "LZWtestFile.txt";
                         String testFileContent = "Testing decompress LZw";
                         createTestFile(testFileName, testFileContent);
-                        String compressedFileName = "src" + File.separator + "DeschubsTests" +
-                                        File.separator + "testFile.ll";
+                        String compressedFileName = "LZWtestFile.ll";
                         SchubsL.compress(testFileName);
                         Deschubs.expand(compressedFileName);
                         String decompressedContent = readTextFile(testFileName.substring(0,
