@@ -24,8 +24,8 @@ public class SchubsArcTest {
     @Test
     public void testEmptyFilesToTar() throws IOException {
         System.out.println("Testing Tar with empty file");
-        String filename = "src/SchubsArcTest/empty.txt";
-        String archiveName = "src/SchubsArcTest";
+        String filename = "src" + File.separator + "SchubsArcTest" + File.separator + "empty.txt";
+        String archiveName = "src" + File.separator + "SchubsArcTest";
         File file = new File(filename);
 
         try {
@@ -50,7 +50,7 @@ public class SchubsArcTest {
             SchubsArc.main(new String[] { archiveName, filename });
         }
 
-        String archiveResults = "src/SchubsArcTest/SchubsArcTest.zh";
+        String archiveResults = archiveName + File.separator + "SchubsArcTest.zh";
         File compressedFile = new File(archiveResults);
         assertTrue(compressedFile.exists());
         if (compressedFile.exists()) {
@@ -61,8 +61,8 @@ public class SchubsArcTest {
     @Test(expected = IllegalArgumentException.class)
     public void testNonExistentFilesToTar() throws IOException {
         System.out.println("Testing Tar with File that doesnt exist");
-        String filename = "src/nonExistent.txt";
-        String archiveName = "src/SchubsArcTest";
+        String filename = "src" + File.separator + "nonExistent.txt";
+        String archiveName = "src" + File.separator + "SchubsArcTest";
         SchubsArc.main(new String[] { archiveName, filename });
         File file = new File(filename);
         if (!file.exists()) {
@@ -73,8 +73,8 @@ public class SchubsArcTest {
     @Test
     public void testDestinationArchiveExists() throws IOException {
         System.out.println("Testing if the destination archive exists");
-        String filename = "src/SchubsArcTest/blee.txt";
-        String archiveName = "src/SchubsArcTest";
+        String filename = "src" + File.separator + "SchubsArcTest" + File.separator + "blee.txt";
+        String archiveName = "src" + File.separator + "SchubsArcTest";
         File file = new File(archiveName + File.separator + "SchubsArcTest.zh");
         SchubsArc.main(new String[] { archiveName, filename });
         assertTrue(file.exists());
@@ -83,7 +83,7 @@ public class SchubsArcTest {
     @Test(expected = IllegalArgumentException.class)
     public void testDirectoryAsFileToTar() throws IOException {
         System.out.println("Testing directory as File");
-        String filename = "src/SchubsArcTest";
+        String filename = "src" + File.separator + "SchubsArcTest";
         File folder = new File(filename);
         String archiveName = "src";
         if (folder.isDirectory()) {
@@ -97,12 +97,12 @@ public class SchubsArcTest {
     @Test
     public void testFilesWithManyCharacters() throws IOException {
         System.out.println("Testing Multicharacter files");
-        String filename = "src/SchubsArcTest/blue.txt";
-        String archiveName = "src/SchubsArcTest";
+        String filename = "src" + File.separator + "SchubsArcTest" + File.separator + "blue.txt";
+        String archiveName = "src" + File.separator + "SchubsArcTest";
 
         SchubsArc.main(new String[] { archiveName, filename });
 
-        String archiveResults = "src/SchubsArcTest/SchubsArcTest.zh";
+        String archiveResults = archiveName + File.separator + "SchubsArcTest.zh";
         File compressedFile = new File(archiveResults);
         assertTrue(compressedFile.exists());
         if (compressedFile.exists()) {
@@ -113,12 +113,12 @@ public class SchubsArcTest {
     @Test
     public void testFilesWithSpacesAndLineEndings() throws IOException {
         System.out.println("Testing files with spacings and Line endings");
-        String filename = "src/SchubsArcTest/blue.txt";
-        String archiveName = "src/SchubsArcTest";
+        String filename = "src" + File.separator + "SchubsArcTest" + File.separator + "blue.txt";
+        String archiveName = "src" + File.separator + "SchubsArcTest";
 
         SchubsArc.main(new String[] { archiveName, filename });
 
-        String archiveResults = "src/SchubsArcTest/SchubsArcTest.zh";
+        String archiveResults = archiveName + File.separator + "SchubsArcTest.zh";
         File compressedFile = new File(archiveResults);
         assertTrue(compressedFile.exists());
         if (compressedFile.exists()) {
@@ -129,14 +129,14 @@ public class SchubsArcTest {
     @Test
     public void testCombinationOfFiles() throws IOException {
         System.out.println("Testing commbinations of files");
-        String filename1 = "src/SchubsArcTest/blah.txt";
-        String filename2 = "src/SchubsArcTest/blue.txt";
-        String filename3 = "src/SchubsArcTest/blee.txt";
-        String archiveName = "src/SchubsArcTest";
+        String filename1 = "src" + File.separator + "SchubsArcTest" + File.separator + "blah.txt";
+        String filename2 = "src" + File.separator + "SchubsArcTest" + File.separator + "blue.txt";
+        String filename3 = "src" + File.separator + "SchubsArcTest" + File.separator + "blee.txt";
+        String archiveName = "src" + File.separator + "SchubsArcTest";
 
         SchubsArc.main(new String[] { archiveName, filename1, filename2, filename3 });
 
-        String archiveResults = "src/SchubsArcTest/SchubsArcTest.zh";
+        String archiveResults = archiveName + File.separator + "SchubsArcTest.zh";
         File compressedFile = new File(archiveResults);
         assertTrue(compressedFile.exists());
         if (compressedFile.exists()) {
@@ -147,7 +147,7 @@ public class SchubsArcTest {
     @Test(expected = IllegalArgumentException.class)
     public void testWrongNumberOfArguments() throws IOException {
         System.out.println("Testing Wrong number of arguments");
-        String[] args = { "src/SchubsArcTest" };
+        String[] args = { "src" + File.separator + "SchubsArcTest" };
         SchubsArc.main(args);
 
     }

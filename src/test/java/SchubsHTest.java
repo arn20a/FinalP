@@ -71,7 +71,7 @@ public class SchubsHTest {
     public void testContainsManyThings() {
         System.out.println("Testing file with many things");
 
-        String filename = "src/SchubsHTests/test1.txt";
+        String filename = "src" + File.separator + "SchubsHTests" + File.separator + "test1.txt";
 
         SchubsH.compress(filename, filename + ".hh");
 
@@ -95,7 +95,7 @@ public class SchubsHTest {
     @Test
     public void testOneReallyLongWordWithNoSpaces() throws IOException {
         System.out.println("Testing file with long word");
-        String filename = "src/SchubsHTests/test2.txt";
+        String filename = "src" + File.separator + "SchubsHTests" + File.separator + "test2.txt";
         File file = new File(filename);
         String filename2 = filename + ".hh";
         File file2 = new File(filename2);
@@ -107,7 +107,7 @@ public class SchubsHTest {
     @Test
     public void testOnlyLowercaseCharacters() throws IOException {
         System.out.println("Testing file with only lower case");
-        String filename = "src/SchubsHTests/test3.txt";
+        String filename = "src" + File.separator + "SchubsHTests" + File.separator + "test3.txt";
         File file = new File(filename);
         String filename2 = filename + ".hh";
         File file2 = new File(filename2);
@@ -119,7 +119,7 @@ public class SchubsHTest {
     @Test
     public void testOnlyUppercaseCharacters() throws IOException {
         System.out.println("Testing file with uppercase");
-        String filename = "src/SchubsHTests/test4.txt";
+        String filename = "src" + File.separator + "SchubsHTests" + File.separator + "test4.txt";
         File file = new File(filename);
         String filename2 = filename + ".hh";
         File file2 = new File(filename2);

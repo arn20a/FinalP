@@ -27,14 +27,14 @@ public class DeschubsTest {
     @Test
     public void decompressHuffman() throws IOException {
         System.out.println("Testing Decompress huffman");
-        String archiveName = "src/DeschubsTests/DeschubsH.txt.hh";
-        File file = new File("src/DeschubsTests/DeschubsH.txt");
-        Path filePath = Paths.get("src/DeschubsTests/DeschubsH.txt");
+        String archiveName = "src" + File.separator + "DeschubsTests" + File.separator + "DeschubsH.txt.hh";
+        File file = new File("src" + File.separator + "DeschubsTests" + File.separator + "DeschubsH.txt");
+        Path filePath = Paths.get("src" + File.separator + "DeschubsTests" + File.separator + "DeschubsH.txt");
 
         Deschubs.main(new String[] { archiveName });
         assertTrue(file.exists());
 
-        String originalFile = "src/DeschubsTests/DeschubsHCopy.txt";
+        String originalFile = "src" + File.separator + "DeschubsTests" + File.separator + "DeschubsHCopy.txt";
         Path originalPath = Paths.get(originalFile);
         assertEquals(Files.readString(originalPath), Files.readString(filePath));
 
@@ -47,10 +47,10 @@ public class DeschubsTest {
     public void decompressLZW() throws IOException {
 
         try {
-            String testFileName = "src/TestingDeschubs/testFile.txt";
+            String testFileName = "src" + File.separator + "DeschubsTest" + File.separator + "testFile.txt";
             String testFileContent = "Testing decompress LZw";
             createTestFile(testFileName, testFileContent);
-            String compressedFileName = "src/TestingDeschubs/testFile.ll";
+            String compressedFileName = "src" + File.separator + "TestingDeschubs" + File.separator + "testFile.ll";
             SchubsL.compress(testFileName, compressedFileName);
             Deschubs.expand(compressedFileName);
             String decompressedContent = readTextFile(testFileName.substring(0, testFileName.length() - 3));
@@ -80,19 +80,19 @@ public class DeschubsTest {
     @Test
     public void decompressTars() throws IOException {
         System.out.println("Testing Tars decompression");
-        String archiveName = "src/DeschubsTests/DeschubsTests.zh";
-        File file = new File("src/DeschubsTests/DeschubsTars.txt");
-        File file2 = new File("src/DeschubsTests/DeschubsTars1.txt");
-        Path filePath = Paths.get("src/DeschubsTests/DeschubsTars.txt");
-        Path filePath2 = Paths.get("src/DeschubsTests/DeschubsTars1.txt");
+        String archiveName = "src" + File.separator + "DeschubsTests" + File.separator + "DeschubsTests.zh";
+        File file = new File("src" + File.separator + "DeschubsTests" + File.separator + "DeschubsTars.txt");
+        File file2 = new File("src" + File.separator + "DeschubsTests" + File.separator + "DeschubsTars1.txt");
+        Path filePath = Paths.get("src" + File.separator + "DeschubsTests" + File.separator + "DeschubsTars.txt");
+        Path filePath2 = Paths.get("src" + File.separator + "DeschubsTests" + File.separator + "DeschubsTars1.txt");
 
         Deschubs.main(new String[] { archiveName });
         assertTrue(file2.exists());
         assertTrue(file.exists());
 
-        String originalFile = "src/DeschubsTests/DeschubsTars1Copy.txt";
+        String originalFile = "src" + File.separator + "DeschubsTests" + File.separator + "DeschubsTars1Copy.txt";
         Path originalPath = Paths.get(originalFile);
-        String originalFile2 = "src/DeschubsTests/DeschubsTarsCopy.txt";
+        String originalFile2 = "src" + File.separator + "DeschubsTests" + File.separator + "DeschubsTarsCopy.txt";
         Path originalPath2 = Paths.get(originalFile2);
         assertEquals(Files.readString(originalPath), Files.readString(filePath2));
         assertEquals(Files.readString(originalPath2), Files.readString(filePath));

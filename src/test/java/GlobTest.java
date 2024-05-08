@@ -24,32 +24,37 @@ public class GlobTest {
     @Test
     public void checkHuffmanGlob() throws IOException {
         System.out.println("Testing globs with Huffman");
-        String[] args = new String[] { "src/GlobTests/globtest3.txt", "src/GlobTests/globtest1.txt",
-                "src/GlobTests/globtest2.txt" };
+        String[] args = new String[] { "src" + File.separator + "GlobTests" + File.separator + "globtest3.txt",
+                "src" + File.separator + "GlobTests" + File.separator + "globtest1.txt",
+                "src" + File.separator + "GlobTests" + File.separator + "globtest2.txt" };
         SchubsH.main(args);
-        assertTrue(new File("src/GlobTests/globtest3.txt.hh").exists());
-        assertTrue(new File("src/GlobTests/globtest1.txt.hh").exists());
-        assertTrue(new File("src/GlobTests/globtest2.txt.hh").exists());
+        assertTrue(new File("src" + File.separator + "GlobTests" + File.separator + "globtest3.txt.hh").exists());
+        assertTrue(new File("src" + File.separator + "GlobTests" + File.separator + "globtest1.txt.hh").exists());
+        assertTrue(new File("src" + File.separator + "GlobTests" + File.separator + "globtest2.txt.hh").exists());
     }
 
     @Test
     public void checkLZWGlob() throws IOException {
         System.out.println("Testing globs with LZW");
-        String[] args = new String[] { "src/GlobTests/globtest3.txt", "src/GlobTests/globtest1.txt",
-                "src/GlobTests/globtest2.txt" };
+        String[] args = new String[] { "src" + File.separator + "GlobTests" + File.separator + "globtest3.txt",
+                "src" + File.separator + "GlobTests" + File.separator + "globtest1.txt",
+                "src" + File.separator + "GlobTests" + File.separator + "globtest2.txt" };
         SchubsL.main(args);
-        assertTrue(new File("src/GlobTests/globtest3.txt.ll").exists());
-        assertTrue(new File("src/GlobTests/globtest1.txt.ll").exists());
-        assertTrue(new File("src/GlobTests/globtest2.txt.ll").exists());
+        assertTrue(new File("src" + File.separator + "GlobTests" + File.separator + "globtest3.txt.ll").exists());
+        assertTrue(new File("src" + File.separator + "GlobTests" + File.separator + "globtest1.txt.ll").exists());
+        assertTrue(new File("src" + File.separator + "GlobTests" + File.separator + "globtest2.txt.ll").exists());
     }
 
     @Test
     public void checkTarsGlob() throws IOException {
         System.out.println("Testing globs with tars");
-        String[] args = new String[] { "src/GlobTests/TarsGlob", "src/GlobTests/globtest3.txt",
-                "src/GlobTests/globtest1.txt",
-                "src/GlobTests/globtest2.txt" };
+        String[] args = new String[] { "src" + File.separator + "GlobTests" + File.separator + "TarsGlob",
+                "src" + File.separator + "GlobTests" + File.separator + "globtest3.txt",
+                "src" + File.separator + "GlobTests" + File.separator + "globtest1.txt",
+                "src" + File.separator + "GlobTests" + File.separator + "globtest2.txt" };
         SchubsArc.main(args);
-        assertTrue(new File("src/GlobTests/TarsGlob/TarsGlob.zh").exists());
+        assertTrue(new File(
+                "src" + File.separator + "GlobTests" + File.separator + "TarsGlob" + File.separator + "TarsGlob.zh")
+                .exists());
     }
 }
