@@ -56,7 +56,7 @@ public class DeschubsTest {
                                         File.separator + "testFile.txt";
                         String testFileContent = "Testing decompress LZw";
                         createTestFile(testFileName, testFileContent);
-                        String compressedFileName = "src" + File.separator + "TestingDeschubs" +
+                        String compressedFileName = "src" + File.separator + "DeschubsTests" +
                                         File.separator + "testFile.ll";
                         SchubsL.compress(testFileName);
                         Deschubs.expand(compressedFileName);
