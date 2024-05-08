@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="SchubsArcTest" time="0.051" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="SchubsArcTest" time="0.047" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Aimen\AppData\Local\Temp\surefire15513713475352134275\surefirebooter17465380829388788354.jar C:\Users\Aimen\AppData\Local\Temp\surefire15513713475352134275 2024-05-08T13-40-45_392-jvmRun1 surefire2188975956021360780tmp surefire_0927061755674802994tmp"/>
+    <property name="sun.java.command" value="C:\Users\Aimen\AppData\Local\Temp\surefire17821944930499965831\surefirebooter11262438304543819291.jar C:\Users\Aimen\AppData\Local\Temp\surefire17821944930499965831 2024-05-08T17-42-51_100-jvmRun1 surefire6740913631142248300tmp surefire_016620642283031441838tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Aimen\SE2\FinalP\target\test-classes;C:\Users\Aimen\SE2\FinalP\target\classes;C:\Users\Aimen\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Aimen\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Aimen\AppData\Local\Temp\surefire15513713475352134275\surefirebooter17465380829388788354.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Aimen\AppData\Local\Temp\surefire17821944930499965831\surefirebooter11262438304543819291.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21+35-LTS-2513"/>
@@ -58,12 +58,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testDestinationArchiveExists" classname="SchubsArcTest" time="0.008"/>
-  <testcase name="testCombinationOfFiles" classname="SchubsArcTest" time="0.015"/>
-  <testcase name="testEmptyFilesToTar" classname="SchubsArcTest" time="0.003"/>
-  <testcase name="testFilesWithSpacesAndLineEndings" classname="SchubsArcTest" time="0.003"/>
-  <testcase name="testFilesWithManyCharacters" classname="SchubsArcTest" time="0.01"/>
-  <testcase name="testWrongNumberOfArguments" classname="SchubsArcTest" time="0"/>
-  <testcase name="testNonExistentFilesToTar" classname="SchubsArcTest" time="0.004"/>
-  <testcase name="testDirectoryAsFileToTar" classname="SchubsArcTest" time="0"/>
+  <testcase name="testDestinationArchiveExists" classname="SchubsArcTest" time="0"/>
+  <testcase name="testCombinationOfFiles" classname="SchubsArcTest" time="0.02"/>
+  <testcase name="testEmptyFilesToTar" classname="SchubsArcTest" time="0.005"/>
+  <testcase name="testFilesWithSpacesAndLineEndings" classname="SchubsArcTest" time="0.009"/>
+  <testcase name="testFilesWithManyCharacters" classname="SchubsArcTest" time="0.009"/>
+  <testcase name="testWrongNumberOfArguments" classname="SchubsArcTest" time="0.001"/>
+  <testcase name="testNonExistentFilesToTar" classname="SchubsArcTest" time="0"/>
+  <testcase name="testDirectoryAsFileToTar" classname="SchubsArcTest" time="0.001"/>
 </testsuite>

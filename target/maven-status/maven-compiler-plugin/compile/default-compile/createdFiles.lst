@@ -3,6 +3,7 @@ Deschubs$Node.class
 MaxPQ.class
 SchubsH.class
 StdIn.class
+TST$1.class
 Deschubs.class
 BinaryOut.class
 BinaryStdOut.class
@@ -11,7 +12,7 @@ BinaryIn.class
 MinPQ$HeapIterator.class
 MinPQ.class
 SchubsH$Node.class
-SchubsL.class
 BinaryDump.class
+Queue$1.class
 StdOut.class
 SchubsArc.class

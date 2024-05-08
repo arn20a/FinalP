@@ -21,7 +21,7 @@ public class SchubsLTest {
     @Test(expected = FileNotFoundException.class)
     public void testCompressMissingFile() throws IOException {
         String filename = "missingFile.txt";
-        SchubsL.compress(filename, filename + ".lzw");
+        SchubsL.compress(filename);
     }
 
     @Test
@@ -29,8 +29,8 @@ public class SchubsLTest {
         String filename = "manyThings.txt";
         createFileWithContents(filename, "This file contains many things!");
 
-        SchubsL.compress(filename, filename + ".lzw");
-        File compressedFile = new File(filename + ".lzw");
+        SchubsL.compress(filename);
+        File compressedFile = new File(filename + ".ll");
         assertTrue(compressedFile.exists() && compressedFile.length() > 0);
 
         compressedFile.delete();
@@ -47,8 +47,8 @@ public class SchubsLTest {
     public void testCompressLongWord() throws IOException {
         String filename = "longWord.txt";
         createFileWithContents(filename, "supercalifragilisticexpialidocious");
-        SchubsL.compress(filename, filename + ".lzw");
-        File compressedFile = new File(filename + ".lzw");
+        SchubsL.compress(filename);
+        File compressedFile = new File(filename + ".ll");
         assertTrue(compressedFile.exists() && compressedFile.length() > 0);
         compressedFile.delete();
         new File(filename).delete();
@@ -58,7 +58,7 @@ public class SchubsLTest {
     public void testCompressEmptyFile() throws IOException {
         String filename = "emptyFile.txt";
         File file = new File(filename);
-        File compressedFile = new File(filename + ".lzw");
+        File compressedFile = new File(filename + ".ll");
         assertTrue(compressedFile.length() == 0);
 
         compressedFile.delete();
@@ -70,9 +70,9 @@ public class SchubsLTest {
         String filename = "lowercase.txt";
         createFileWithContents(filename, "abcdefghijklmnopqrstuvwxyz");
 
-        SchubsL.compress(filename, filename + ".lzw");
+        SchubsL.compress(filename);
 
-        File compressedFile = new File(filename + ".lzw");
+        File compressedFile = new File(filename + ".ll");
         assertTrue(compressedFile.exists() && compressedFile.length() > 0);
 
         compressedFile.delete();
@@ -84,9 +84,9 @@ public class SchubsLTest {
         String filename = "uppercase.txt";
         createFileWithContents(filename, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
-        SchubsL.compress(filename, filename + ".lzw");
+        SchubsL.compress(filename);
 
-        File compressedFile = new File(filename + ".lzw");
+        File compressedFile = new File(filename + ".ll");
         assertTrue(compressedFile.exists() && compressedFile.length() > 0);
 
         compressedFile.delete();
