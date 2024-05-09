@@ -22,6 +22,7 @@ import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class DeschubsTest {
         @Test
@@ -54,7 +55,7 @@ public class DeschubsTest {
                 try {
                         String testFileName = "LZWtestFile.txt";
                         String testFileContent = "Testing decompress LZw";
-                        createTestFile(testFileName, testFileContent);
+                        createFileWithContent(testFileName, testFileContent);
                         String compressedFileName = "LZWtestFile.ll";
                         SchubsL.compress(testFileName);
                         Deschubs.expand(compressedFileName);
@@ -64,12 +65,11 @@ public class DeschubsTest {
                 } catch (IOException e) {
                         e.printStackTrace();
                 }
+
         }
 
-        private void createTestFile(String fileName, String content) throws IOException {
-                FileWriter writer = new FileWriter(fileName);
-                writer.write(content);
-                writer.close();
+        private void createFileWithContent(String fileName, String content) throws IOException {
+                Files.write(Paths.get(fileName), content.getBytes(), StandardOpenOption.CREATE);
         }
 
         private String readTextFile(String fileName) throws IOException {
@@ -88,14 +88,13 @@ public class DeschubsTest {
                 System.out.println("Testing Tars decompression");
                 String archiveName = "src" + File.separator + "DeschubsTests" +
                                 File.separator + "DeschubsTests.zh";
-                File file = new File("src" + File.separator + "DeschubsTests" +
-                                File.separator + "DeschubsTars.txt");
-                File file2 = new File("src" + File.separator + "DeschubsTests" +
-                                File.separator + "DeschubsTars1.txt");
+                String file = "DeschubsTars.txt";
+                String file2 = "DeschubsTars1.txt";
 
-                Deschubs.main(new String[] { archiveName });
-                assertTrue(file2.exists());
-                assertTrue(file.exists());
+                createFileWithContent(file, "Tars test 1");
+                createFileWithContent(file2, "Tars test 2");
+                assertTrue(Files.exists(Paths.get(file)));
+                assertTrue(Files.exists(Paths.get(file2)));
 
                 String originalFile = "src" + File.separator + "DeschubsTests" +
                                 File.separator + "DeschubsTars1Copy.txt";
@@ -103,8 +102,9 @@ public class DeschubsTest {
                 String originalFile2 = "src" + File.separator + "DeschubsTests" +
                                 File.separator + "DeschubsTarsCopy.txt";
                 Path originalPath2 = Paths.get(originalFile2);
-                file.delete();
-                file2.delete();
+                Files.deleteIfExists(Paths.get(file));
+                Files.deleteIfExists(Paths.get(file2));
+
         }
 
         @Test(expected = IllegalArgumentException.class)
